@@ -12,8 +12,7 @@ body{margin:0;background:#061230}
 a{color:inherit}a:hover{color:#ffffff}
 html{scroll-behavior:smooth}
 img{max-width:100%}
-a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #ff8fa9;outline-offset:3px}
-[hidden]{display:none!important}
+a:focus-visible,button:focus-visible{outline:3px solid #ff8fa9;outline-offset:3px}
 @media (max-width:560px){h1{font-size:32px!important}header nav{width:100%}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -92,6 +91,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
         <h2 style="margin: 0; font-weight: 800; font-size: 34px; line-height: 1.1;">Contact us</h2>
         <p style="margin: 0; color: #c9d3ee;">Do you have a company picnic, wedding reception, birthday party or other special event where you would like us to show up? Our weekends book up fast, so contact us soon!</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; font-weight: 700; margin-top: 4px;">
+          <a target="_blank" rel="noopener" href="https://www.facebook.com/p/KOfoodtruck-100054489969067/">Facebook</a>
+          <a target="_blank" rel="noopener" href="https://www.instagram.com/kofoodtruck/">Instagram</a>
+          <a target="_blank" rel="noopener" href="https://x.com/KOFoodTruck">X</a>
+        </div>
+      </div>
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
         <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 16px 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
           <div><span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #ff8fa9; margin-bottom: 6px;">Telephone</span><a href="tel:+17048191153" style="text-decoration: none; font-weight: 700; font-size: 20px;">704-819-1153</a></div>
           <button type="button" class="copy" data-copy="704-819-1153" style="background: transparent; color: #ffffff; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 6px; padding: 10px 14px; font: 600 14px Figtree, sans-serif; cursor: pointer;">Copy</button>
@@ -100,30 +106,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
           <div style="min-width: 0;"><span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #ff8fa9; margin-bottom: 6px;">Email</span><a href="mailto:kofoodtruck@yahoo.com" style="text-decoration: none; font-weight: 700; font-size: 20px; overflow-wrap: anywhere;">kofoodtruck@yahoo.com</a></div>
           <button type="button" class="copy" data-copy="kofoodtruck@yahoo.com" style="background: transparent; color: #ffffff; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 6px; padding: 10px 14px; font: 600 14px Figtree, sans-serif; cursor: pointer;">Copy</button>
         </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 24px; font-weight: 700; margin-top: 4px;">
-          <a target="_blank" rel="noopener" href="https://www.facebook.com/p/KOfoodtruck-100054489969067/">Facebook</a>
-          <a target="_blank" rel="noopener" href="https://www.instagram.com/kofoodtruck/">Instagram</a>
-          <a target="_blank" rel="noopener" href="https://x.com/KOFoodTruck">X</a>
-        </div>
       </div>
-      <form id="contact-form" action="https://formsubmit.co/kofoodtruck@yahoo.com" method="POST" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 24px;">
-        <input type="hidden" name="_subject" value="New message from kofoodtruck.com">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="http://kofoodtruck.com/?sent=1#contact">
-        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px;">
-        <p id="sent" hidden style="margin: 0; padding: 12px 14px; border-radius: 6px; background: rgba(255,255,255,0.1); font-weight: 600;">Thanks! Your message was sent. We'll get back to you soon.</p>
-        <div><label for="f-name" style="display: block; font-weight: 700; margin-bottom: 6px;">Name <span style="font-weight: 400; font-size: 14px; color: #c9d3ee;">(required)</span></label><input id="f-name" name="name" required autocomplete="name" style="width: 100%; box-sizing: border-box; font: 400 16px Figtree, sans-serif; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.35); border-radius: 6px; background: #061230; color: #ffffff;"></div>
-        <div><label for="f-email" style="display: block; font-weight: 700; margin-bottom: 6px;">Email <span style="font-weight: 400; font-size: 14px; color: #c9d3ee;">(required)</span></label><input id="f-email" name="email" type="email" required autocomplete="email" style="width: 100%; box-sizing: border-box; font: 400 16px Figtree, sans-serif; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.35); border-radius: 6px; background: #061230; color: #ffffff;"></div>
-        <div><label for="f-msg" style="display: block; font-weight: 700; margin-bottom: 6px;">Message</label><textarea id="f-msg" name="message" style="width: 100%; box-sizing: border-box; min-height: 150px; font: 400 16px Figtree, sans-serif; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.35); border-radius: 6px; background: #061230; color: #ffffff; resize: vertical;"></textarea></div>
-        <button type="submit" style="align-self: flex-start; font: 700 16px Figtree, sans-serif; color: #ffffff; background: #e3335f; border: 0; border-radius: 6px; padding: 13px 22px; cursor: pointer;">Contact Us</button>
-      </form>
     </div>
   </section>
 </div>
 <script>
 document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.getAttribute('data-copy');if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)},function(){})}})});
-if(location.search.indexOf('sent=1')>-1){var s=document.getElementById('sent');if(s)s.hidden=false;}
 </script>
 </body>
 </html>
