@@ -4,223 +4,173 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>KO Food Truck</title>
-<meta name="description" content="Tex-Mex, BBQ and smoked meats from Kenny Oakley's food truck, serving the Greater Charlotte area. Book us for your event.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,700;0,800;0,900;1,900&display=swap">
+<meta name="description" content="Deliciousness to go. Tex-Mex, Italian and BBQ from Kenny Oakley's Texas background, serving the Greater Charlotte area.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&display=swap">
 <link rel="icon" href="favicon.png">
 <style>
-/* Layout: navy top bar and photo-led hero, white story, a printed-menu list, navy booking panel. One look, Texas flag navy/red/white, Figtree throughout. */
+/* Layout: same structure as the original WordPress site. Red header, navy menu, red contact. Figtree, Texas flag colors. */
 :root {
   --navy: #00205b;
-  --navy-ink: #001640;
   --red: #bf0d3e;
   --white: #ffffff;
-  --paper: #f3f5fa;
-  --ink: #101a33;
-  --soft: #4a5572;
-  --rule: #cfd6e6;
+  --soft: #d5dcee;
+  --line: rgba(255,255,255,.18);
   --font: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
-  color-scheme: light;
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--white); color: var(--ink); font: 400 1.0625rem/1.65 var(--font); }
+body { margin: 0; background: var(--navy); color: var(--white); font: 300 1.0625rem/1.7 var(--font); }
 h1, h2, h3, p { margin: 0; }
-h1, h2 { text-wrap: balance; }
 a { color: inherit; }
-a:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }
 img { display: block; max-width: 100%; }
-.wrap { max-width: 70rem; margin: 0 auto; padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 72rem; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
 
-/* Top bar */
-.top { background: var(--navy); color: var(--white); }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .9rem; }
-.brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; }
-.brand img { width: 56px; height: 56px; border-radius: 50%; background: var(--white); object-fit: cover; }
-.brand span { font-weight: 900; font-size: 1.2rem; letter-spacing: -.01em; }
-.top nav { display: flex; align-items: center; gap: 1.5rem; font-weight: 700; }
-.top nav a { text-decoration: none; }
-.top nav .navlink { opacity: .85; }
-.top nav .navlink:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
-.top .call { background: var(--red); padding: .55rem .95rem; border-radius: 4px; font-variant-numeric: tabular-nums; }
+header { background: var(--red); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 1.5rem; }
+header h1 { font-weight: 700; font-size: clamp(2rem, 5vw, 3.1rem); letter-spacing: -.01em; line-height: 1; }
+header img { width: 132px; height: auto; }
 
-/* Hero */
-.hero { background: var(--navy); color: var(--white); }
-.hero .wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3rem; align-items: center; padding-block: 2.5rem 3.5rem; }
-.hero h1 { font-weight: 900; font-style: italic; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: .95; letter-spacing: -.03em; }
-.hero p { margin-top: 1.25rem; color: #cdd6ee; font-size: 1.15rem; max-width: 30rem; }
-.hero .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 1.75rem; }
-.btn { display: inline-block; background: var(--red); color: var(--white); text-decoration: none; font-weight: 800; padding: .9rem 1.4rem; border-radius: 4px; }
-.btn:hover { background: #a30b35; }
-.textlink { font-weight: 700; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px; }
-.collage { display: grid; grid-template-columns: 1.35fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; aspect-ratio: 5 / 4; max-width: 100%; }
-.collage img { width: 100%; height: 100%; object-fit: cover; border-radius: 3px; background: #0a2a6a; }
-.collage img:first-child { grid-row: 1 / 3; }
-.bars { height: 20px; background: linear-gradient(var(--white) 0 50%, var(--red) 50% 100%); }
+.about { text-align: center; }
+.about .wrap { padding-block: 4.5rem 1rem; }
+.about h2 { font-weight: 700; font-size: clamp(2.4rem, 6vw, 3.75rem); line-height: 1.05; }
+.about p { max-width: 50rem; margin: 1.5rem auto 0; color: var(--soft); font-size: 1.1rem; }
 
-/* Story */
-.story .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3.5rem; align-items: center; padding-block: 4.5rem; }
-.story figure { margin: 0; }
-.story figure img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px; background: var(--paper); }
-.story figcaption { margin-top: .6rem; font-size: .9rem; color: var(--soft); }
-.kicker { display: block; color: var(--red); font-weight: 800; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .75rem; }
-.story h2, .menu h2 { font-weight: 900; font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.05; letter-spacing: -.02em; color: var(--navy); }
-.story p { margin-top: 1.1rem; max-width: 36rem; }
-.story .from { margin-top: 1.75rem; padding-top: 1rem; border-top: 2px solid var(--navy); display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; font-weight: 800; color: var(--navy); }
-.story .from span::before { content: "★"; color: var(--red); margin-right: .4rem; }
+.dishes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5rem 2rem; padding-block: 3.5rem 1rem; }
+.dish { min-width: 0; }
+.dish img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.dish h3 { margin-top: 1.4rem; text-align: center; font-weight: 500; font-size: 1.6rem; line-height: 1.2; }
+.dish p { margin-top: .9rem; color: var(--soft); }
 
-/* Menu */
-.menu { background: var(--paper); }
-.menu .wrap { padding-block: 4.5rem; }
-.menu header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 2rem; padding-bottom: 1.25rem; border-bottom: 3px solid var(--navy); }
-.menu header p { color: var(--soft); }
-.items { display: grid; grid-template-columns: 1fr 1fr; gap: 0 4rem; margin: 0; padding: 0; list-style: none; }
-.items li { padding: 1.4rem 0; border-bottom: 1px solid var(--rule); min-width: 0; }
-.items h3 { font-weight: 900; font-size: 1.15rem; letter-spacing: .04em; text-transform: uppercase; color: var(--navy); display: flex; align-items: center; gap: .55rem; }
-.items h3::before { content: "★"; color: var(--red); font-size: .95rem; }
-.items p { margin-top: .3rem; color: var(--soft); }
-.extras { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 4rem; margin-top: 2.25rem; }
-.extras h3 { font-weight: 900; font-size: 1rem; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
-.extras p { margin-top: .35rem; }
-.strip { display: grid; grid-template-columns: 1fr 1.6fr 1fr; gap: 10px; margin-top: 3rem; }
-.strip img { width: 100%; height: 260px; object-fit: cover; border-radius: 3px; background: var(--rule); }
+.extras { text-align: center; padding-block: 3.5rem 5rem; }
+.extras h2 { font-weight: 500; font-size: 1.9rem; }
+.extras p { margin-top: 1.1rem; color: var(--soft); }
+.extras p + p { margin-top: .4rem; }
 
-/* Booking */
-.book { background: var(--navy); color: var(--white); border-top: 10px solid var(--red); }
-.book .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3.5rem; padding-block: 4.5rem; align-items: start; }
-.book h2 { font-weight: 900; font-style: italic; font-size: clamp(2.1rem, 4.5vw, 3.2rem); line-height: 1; letter-spacing: -.03em; }
-.book p { margin-top: 1.1rem; color: #cdd6ee; max-width: 32rem; }
-.book ul { margin: 1.25rem 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: .4rem 1.5rem; font-weight: 700; }
-.book li::before { content: "★"; color: #ff6b8e; margin-right: .5rem; }
-.reach { border-left: 3px solid var(--red); padding-left: 1.75rem; }
-.reach .small { display: block; font-size: .85rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #9fb0da; }
-.reach .phone { display: inline-block; margin-top: .3rem; font-weight: 900; font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.1; text-decoration: none; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
-.reach .email { display: inline-block; margin-top: .3rem; font-weight: 700; font-size: 1.2rem; overflow-wrap: anywhere; }
-.reach .gap { margin-top: 1.75rem; }
-.social { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin-top: .45rem; font-weight: 700; }
+.contact { background: var(--red); }
+.contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; padding-block: 4.5rem; }
+.contact .info { text-align: center; }
+.contact h2 { font-weight: 400; font-size: 2rem; letter-spacing: .02em; }
+.contact .info p { margin-top: 1.25rem; font-weight: 400; }
+.contact .info a { text-decoration: none; }
+.contact .info a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.icons { display: flex; justify-content: center; gap: 1.25rem; margin-top: 1.5rem; }
+.icons a { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; }
+.icons a:hover { background: rgba(255,255,255,.12); }
+.icons svg { width: 22px; height: 22px; fill: var(--white); }
 
-footer { background: var(--navy-ink); color: #9fb0da; font-size: .9rem; }
-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; padding-block: 1.25rem; }
+form { display: grid; gap: 1.1rem; }
+label { display: block; font-weight: 700; margin-bottom: .35rem; }
+label span { font-weight: 400; font-size: .85rem; }
+input, textarea { width: 100%; font: 400 1rem var(--font); color: #111; background: var(--white); border: 1px solid #111; border-radius: 6px; padding: .8rem .9rem; }
+textarea { min-height: 180px; resize: vertical; }
+button { justify-self: start; font: 500 1rem var(--font); color: var(--white); background: var(--navy); border: 0; border-radius: 999px; padding: .95rem 2.1rem; cursor: pointer; }
+button:hover { background: #001846; }
+.hp { position: absolute; left: -9999px; }
+
+footer { background: var(--navy); color: var(--soft); font-size: .9rem; text-align: center; }
+footer .wrap { padding-block: 1.5rem; }
 
 @media (max-width: 900px) {
-  .hero .wrap, .story .wrap, .book .wrap { grid-template-columns: 1fr; gap: 2.25rem; }
-  .story figure { max-width: 26rem; }
-  .items, .extras { grid-template-columns: 1fr; }
+  .dishes { grid-template-columns: repeat(2, 1fr); }
+  .contact .wrap { grid-template-columns: 1fr; gap: 3rem; }
 }
 @media (max-width: 600px) {
-  .top nav .navlink { display: none; }
-  .brand span { display: none; }
-  .brand img { width: 48px; height: 48px; }
-  .strip { grid-template-columns: 1fr; }
-  .strip img { height: 220px; }
-  .book ul { grid-template-columns: 1fr; }
-  .reach { padding-left: 1.25rem; }
+  header img { width: 96px; }
+  .dishes { grid-template-columns: 1fr; gap: 3rem; }
+  .about p { text-align: left; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
 
 
-<header class="top">
+<header>
   <div class="wrap">
-    <a class="brand" href="#"><img src="logo.png" alt="KO Food Truck logo"><span>KO Food Truck</span></a>
-    <nav aria-label="Main">
-      <a class="navlink" href="#menu">Menu</a>
-      <a class="navlink" href="#book">Book Us</a>
-      <a class="call" href="tel:+17048191153">704-819-1153</a>
-    </nav>
+    <h1>KoFoodTruck</h1>
+    <img src="logo.png" alt="KO Tex-Mex logo">
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <h1>Deliciousness to go.</h1>
-      <p>Tex-Mex, BBQ and Italian with a Texas accent, rolling to stops all over the Greater Charlotte area.</p>
-      <div class="actions">
-        <a class="btn" href="#book">Book the truck</a>
-        <a class="textlink" href="#menu">See the menu</a>
-      </div>
+<main>
+  <section class="about">
+    <div class="wrap">
+      <h2>Who we are</h2>
+      <p>Our truck is more than a place to grab a meal. It is a place to try out our new dishes created by Kenny Oakley’s Texas background. Kenny has been in the restaurant industry since he was 12 years old beginning as a bus boy in a local Mexican restaurant in Amarillo, TX. His background includes Tex-Mex, Italian, and BBQ.</p>
+      <p>We bring great food to locations all over the Greater Charlotte area and can be found in the counties throughout the region. Our calendar below shows our scheduled stops but be sure to follow our social media for surprise visits!</p>
     </div>
-    <div class="collage">
-      <img src="brisket-tacos.webp" alt="Brisket tacos with grilled peppers and onions">
-      <img src="blanco-nachos.webp" alt="Blanco nachos with white cheese sauce">
-      <img src="pork-tacos.webp" alt="Smoked pork tacos with coleslaw">
-    </div>
-  </div>
-  <div class="bars" aria-hidden="true"></div>
-</section>
+  </section>
 
-<section class="story">
-  <div class="wrap">
-    <figure>
-      <img src="shrimp-tacos.jpg" alt="Grilled garlic shrimp tacos" loading="lazy">
-      <figcaption>Grilled garlic shrimp tacos</figcaption>
-    </figure>
-    <div>
-      <span class="kicker">Who we are</span>
-      <h2>Kenny's been cooking since he was twelve.</h2>
-      <p>Our truck is more than a place to grab a meal. It's a place to try the new dishes Kenny Oakley creates from his Texas background.</p>
-      <p>Kenny has been in the restaurant business since age 12, starting as a bus boy at a local Mexican restaurant in Amarillo, Texas. His background runs through Tex-Mex, Italian and BBQ, and you'll taste all three on the truck.</p>
-      <p>We bring great food to locations all over the Greater Charlotte area and the counties around it. Follow us on Facebook and Instagram to see where we'll be next, and for surprise visits.</p>
-      <div class="from"><span>Amarillo, TX</span><span>Charlotte, NC</span></div>
-    </div>
-  </div>
-</section>
+  <section class="wrap dishes" aria-label="Menu">
+    <article class="dish">
+      <img src="blanco-nachos.webp" alt="Blanco Nachos">
+      <h3>Blanco Nachos</h3>
+      <p>Tri-colored tortilla chip, house-made white cheese sauce, ground beef or chicken, lettuce, diced tomatoes, and house-made salsa.</p>
+    </article>
+    <article class="dish">
+      <img src="brisket-tacos.webp" alt="Brisket Tacos">
+      <h3>Brisket Tacos</h3>
+      <p>Smoked chopped brisket, brisket relish, grilled peppers and onions, chipotle dressing.</p>
+    </article>
+    <article class="dish">
+      <img src="shrimp-tacos.jpg" alt="Shrimp Tacos">
+      <h3>Shrimp Tacos</h3>
+      <p>Grilled garlic Shrimp, lime-cilantro Cole slaw, adobo crema sauce.</p>
+    </article>
+    <article class="dish">
+      <img src="cornbread-nachos.jpeg" alt="Blanco Nachos with corn bread" loading="lazy">
+      <h3>Blanco Nachos</h3>
+      <p>Corn bread, grilled chicken, grilled peppers and onions, shredded cheese, crumbled tri-colored tortilla chips, jalapeño crema.</p>
+    </article>
+    <article class="dish">
+      <img src="chicken-tacos.webp" alt="Chicken Tacos" loading="lazy">
+      <h3>Chicken Tacos</h3>
+      <p>Seasoned chicken, shredded lettuce, shredded cheese, diced tomatoes, house-made salsa.</p>
+    </article>
+    <article class="dish">
+      <img src="pork-tacos.webp" alt="Pork Tacos" loading="lazy">
+      <h3>Pork Tacos</h3>
+      <p>Smoked pork butt, lime cilantro cole slaw, Sweet Carolina BBQ sauce.</p>
+    </article>
+  </section>
 
-<section class="menu" id="menu">
-  <div class="wrap">
-    <header>
-      <h2>The Menu</h2>
-      <p>Kenny adds new dishes all the time.</p>
-    </header>
-    <ul class="items">
-      <li><h3>Brisket Tacos</h3><p>Smoked chopped brisket, brisket relish, grilled peppers and onions, chipotle dressing.</p></li>
-      <li><h3>Pork Tacos</h3><p>Smoked pork butt, lime-cilantro coleslaw, Sweet Carolina BBQ sauce.</p></li>
-      <li><h3>Shrimp Tacos</h3><p>Grilled garlic shrimp, lime-cilantro coleslaw, adobo crema sauce.</p></li>
-      <li><h3>Chicken Tacos</h3><p>Seasoned chicken, shredded lettuce, shredded cheese, diced tomatoes, house-made salsa.</p></li>
-      <li><h3>Blanco Nachos</h3><p>Tri-colored tortilla chips, house-made white cheese sauce, ground beef or chicken, lettuce, diced tomatoes, house-made salsa.</p></li>
-      <li><h3>Blanco Nachos</h3><p>Cornbread, grilled chicken, grilled peppers and onions, shredded cheese, crumbled tri-colored tortilla chips, jalapeño crema.</p></li>
-    </ul>
-    <div class="extras">
-      <div><h3>Sides</h3><p>Houston Melon Mix · Seasoned house-made pinto beans</p></div>
-      <div><h3>Desserts</h3><p>Margarita sugar cookies · Mexican chocolate cookies · Mexican wedding cookies</p></div>
+  <section class="extras">
+    <div class="wrap">
+      <h2>Sides and Desserts</h2>
+      <p>Houston Melon Mix and Seasoned house-made pinto beans</p>
+      <p>Various Cookies, Margarita sugar, Mexican chocolate, Mexican wedding cookies</p>
     </div>
-    <div class="strip">
-      <img src="chicken-tacos.webp" alt="Chicken tacos" loading="lazy">
-      <img src="cornbread-nachos.jpeg" alt="Cornbread nachos with grilled chicken" loading="lazy">
-      <img src="blanco-nachos.webp" alt="Blanco nachos" loading="lazy">
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="book" id="book">
-  <div class="wrap">
-    <div>
-      <h2>Bring the truck to your event.</h2>
-      <p>Company picnic, wedding reception, birthday party or another special event? We'd love to be there. Our weekends book up fast, so reach out soon.</p>
-      <ul><li>Company picnics</li><li>Wedding receptions</li><li>Birthday parties</li><li>Special events</li></ul>
-    </div>
-    <div class="reach">
-      <span class="small">Call or text</span>
-      <a class="phone" href="tel:+17048191153">704-819-1153</a>
-      <div class="gap"><span class="small">Email</span><a class="email" href="mailto:kofoodtruck@yahoo.com">kofoodtruck@yahoo.com</a></div>
-      <div class="gap"><span class="small">Where we'll be next</span>
-        <div class="social">
-          <a href="https://www.facebook.com/p/KOfoodtruck-100054489969067/" target="_blank" rel="noopener">Facebook</a>
-          <a href="https://www.instagram.com/kofoodtruck/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://x.com/KOFoodTruck" target="_blank" rel="noopener">X</a>
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="info">
+        <h2>CONTACT US</h2>
+        <p>Do you have a company picnic, wedding reception, birthday party or other special event where you would like us to show up? Our weekends book up fast, so contact us soon!</p>
+        <p>Telephone: <a href="tel:+17048191153">704-819-1153</a></p>
+        <p>Email: <a href="mailto:kofoodtruck@yahoo.com">kofoodtruck@yahoo.com</a></p>
+        <div class="icons">
+          <a href="https://www.facebook.com/p/KOfoodtruck-100054489969067/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-1.6 19.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 12 2z"/></svg></a>
+          <a href="https://x.com/KOFoodTruck" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.8 3h3.1l-6.8 7.7 8 10.3h-6.2l-4.9-6.3L5.4 21H2.3l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.5l11.2 14.5z"/></svg></a>
+          <a href="https://www.instagram.com/kofoodtruck/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zM17 5.8a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM21.9 8c-.1-1.6-.4-3-1.6-4.2S17.6 2.2 16 2.1C14.4 2 9.6 2 8 2.1c-1.6.1-3 .4-4.2 1.6S2.2 6.4 2.1 8C2 9.6 2 14.4 2.1 16c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.4.1 8 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.4 0-8zm-2.1 9.8a3.3 3.3 0 0 1-1.8 1.8c-1.3.5-4.3.4-5.9.4s-4.6.1-5.9-.4a3.3 3.3 0 0 1-1.8-1.8c-.5-1.3-.4-4.3-.4-5.8s-.1-4.6.4-5.8A3.3 3.3 0 0 1 6.1 4.4c1.3-.5 4.3-.4 5.9-.4s4.6-.1 5.9.4a3.3 3.3 0 0 1 1.8 1.8c.5 1.3.4 4.3.4 5.8s.1 4.6-.4 5.8z"/></svg></a>
         </div>
       </div>
+      <form action="https://formsubmit.co/kofoodtruck@yahoo.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from kofoodtruck.com">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div><label for="name">Name <span>(required)</span></label><input id="name" name="name" required autocomplete="name"></div>
+        <div><label for="email">Email <span>(required)</span></label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div><label for="message">Message</label><textarea id="message" name="message"></textarea></div>
+        <button type="submit">Contact Us</button>
+      </form>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
-  <div class="wrap">
-    <span>© KO Food Truck</span>
-    <span>Serving the Greater Charlotte area</span>
-  </div>
+  <div class="wrap">© KoFoodTruck · Deliciousness to go</div>
 </footer>
 
 </body>
